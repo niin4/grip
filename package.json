@@ -30,7 +30,7 @@
     "gh-pages": "^1.1.0",
     "prettier": "^1.10.2"
   },
-  "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
+  "homepage": "https://github.com/niin4/grip",
   "keywords": [
     "gatsby",
     "contentful"
@@ -39,7 +39,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contentful-userland/gatsby-contentful-starter.git"
+    "url": "git+https://github.com/niin4/grip.git"
   },
   "scripts": {
     "dev": "gatsby develop",

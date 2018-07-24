@@ -58,10 +58,8 @@ export const pageQuery = graphql`
           }
           title
           image {
-            file {
-              url
-              fileName
-              contentType
+            sizes(maxWidth: 1600) {
+              ...GatsbyContentfulSizes_withWebp
             }
           }
         }
