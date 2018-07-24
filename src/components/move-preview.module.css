@@ -1,6 +1,7 @@
 .previewTitle {
   font-size: 1.5em;
   margin-top: 0.5em;
+  color: rgb(0, 182, 136);
 }
 
 .tag {
@@ -15,5 +16,5 @@
 }
 
 .link {
-  text-decoration: none;
+  text-decoration: underline;
 }

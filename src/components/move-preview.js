@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './article-preview.module.css'
+import styles from './move-preview.module.css'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 

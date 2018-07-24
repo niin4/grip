@@ -1,28 +1,17 @@
 import React from 'react'
 import get from 'lodash/get'
-import Helmet from 'react-helmet'
 import Hero from '../components/hero'
-import MovePreview from '../components/move-preview'
+import MovePreviewSection from '../components/move-preview-section'
 
 class RootIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulMove.edges')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
     return (
       <div style={{ background: '#fff' }}>
-        <Helmet title={siteTitle} />
         <Hero person={author} />
-        <div className="wrapper">
-          <h2 className="section-headline">Recent articles</h2>
-          <ul className="article-list">
-            {posts.map(({ node }) => <li key={node.name}>
-              <MovePreview article={node} />
-            </li>
-            )}
-          </ul>
-        </div>
+        <MovePreviewSection posts={posts} title="Recent" />
       </div>
     )
   }

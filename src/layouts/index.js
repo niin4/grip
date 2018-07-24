@@ -1,21 +1,19 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import base from './base.css'
+import get from 'lodash/get'
+import Helmet from 'react-helmet'
 import Container from '../components/container'
 import Navigation from '../components/navigation'
+import fonts from './font-face.css'
 
 class Template extends React.Component {
   render() {
-    const { location, children } = this.props
-    let header
-
-    let rootPath = `/`
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
-    }
+    const { children } = this.props
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 
     return (
       <Container>
+        <Helmet defaultTitle={siteTitle}
+          titleTemplate={`%s | ${siteTitle}`} />
         <Navigation />
         {children()}
       </Container>
@@ -24,3 +22,14 @@ class Template extends React.Component {
 }
 
 export default Template
+
+export const query = graphql`
+  query AboutQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
+

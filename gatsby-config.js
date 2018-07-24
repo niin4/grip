@@ -1,6 +1,9 @@
 require('dotenv').config()
 
 module.exports = {
+  siteMetadata: {
+    title: 'GRIP'
+  },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
     'gatsby-transformer-remark',

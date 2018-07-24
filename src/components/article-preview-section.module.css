@@ -1,0 +1,20 @@
+.wrapper {
+  width: calc(100% - 10vmin);
+  margin: 0 auto;
+  padding: 5vmin 0;
+}
+
+.articleList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 5vmin;
+}
+
+.sectionHeadline {
+  padding: 0 0 0.4em 0;
+  margin: 0 0 5vmin 0;
+  border-bottom: 1px solid #ddd;
+}
