@@ -12,7 +12,7 @@ class BlogIndex extends React.Component {
       <div style={{ background: '#fff' }}>
         <Helmet title="Blog" />
         <div className={styles.hero}>Blog</div>
-          <ArticlePreviewSection posts={posts} title="Recent blog posts" />
+        <ArticlePreviewSection posts={posts} title="Recent blog posts" />
       </div >
     )
   }
