@@ -12,10 +12,10 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <>
           <Hero person={author} />
-          <MovePreviewSection posts={posts} title="Recent" />
-        </div>
+          <MovePreviewSection posts={posts} title="Highlights" />
+        </>
       </Layout>
     )
   }

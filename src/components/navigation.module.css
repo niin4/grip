@@ -14,3 +14,9 @@
   align-items: center;
   margin: 0 1em;
 }
+
+.navigationLink {
+  text-decoration: none;
+  font-family: 'Avenir Next','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+
+}

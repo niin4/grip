@@ -12,11 +12,11 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <>
           <Helmet title="Blog" />
           <div className={styles.hero}>Blog</div>
           <ArticlePreviewSection posts={posts} title="Recent blog posts" />
-        </div >
+        </>
       </Layout>
     )
   }
