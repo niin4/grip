@@ -9,13 +9,13 @@ import fonts from './font-face.css'
 export default ({ children }) =>
   <StaticQuery
     query={graphql`
-       query LayoutQuery {
+        {
          site {
            siteMetadata {
              title
            }
          }
-       }
+        }
      `}
     render={data => <>
       <Helmet defaultTitle={data.site.siteMetadata.title}

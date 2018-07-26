@@ -22,5 +22,7 @@ theme.overrideThemeStyles = () => ({
 })
 
 const typography = new Typography(theme)
+// const { rhythm, scale } = typography
+// export { rhythm, scale, typography as default };
 
-export default typography
+export { typography as default }
