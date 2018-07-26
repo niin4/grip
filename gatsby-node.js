@@ -1,8 +1,8 @@
 const Promise = require('bluebird')
 const path = require('path')
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
 
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve('./src/templates/blog-post.js')
@@ -23,7 +23,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           `
       ).then(result => {
         if (result.errors) {
-          console.log(result.errors)
           reject(result.errors)
         }
 
@@ -40,5 +39,15 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         })
       })
     )
+  })
+}
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        components: path.resolve(__dirname, 'src/components')
+      }
+    }
   })
 }

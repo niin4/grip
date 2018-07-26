@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './article-preview-section.module.css'
-import MovePreview from '../components/move-preview'
+import styles from 'components/ArticlePreviewSection/article-preview-section.module.css'
+import MovePreview from './move-preview'
 
 
 export default ({ title, posts }) => <div className={styles.wrapper}>

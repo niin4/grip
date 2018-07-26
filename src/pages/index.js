@@ -1,7 +1,9 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import Hero from '../components/hero'
-import MovePreviewSection from '../components/move-preview-section'
+import Hero from 'components/hero'
+import MovePreviewSection from 'components/move-preview-section'
+import Layout from 'components/Layout'
 
 class RootIndex extends React.Component {
   render() {
@@ -9,10 +11,12 @@ class RootIndex extends React.Component {
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
     return (
-      <div style={{ background: '#fff' }}>
-        <Hero person={author} />
-        <MovePreviewSection posts={posts} title="Recent" />
-      </div>
+      <Layout location={this.props.location}>
+        <div style={{ background: '#fff' }}>
+          <Hero person={author} />
+          <MovePreviewSection posts={posts} title="Recent" />
+        </div>
+      </Layout>
     )
   }
 }
@@ -26,7 +30,7 @@ export const pageQuery = graphql`
         node {
           name
           mainImage {
-            sizes(maxWidth: 600) {
+            sizes(maxWidth: 600, quality: 100) {
               ...GatsbyContentfulSizes_withWebp
             }
           }
@@ -38,7 +42,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulPerson(filter: { id: { eq: "c15jwOBqpxqSAOy2eOO4S0m" } }) {
+    allContentfulPerson(limit:1 ) {
       edges {
         node {
           name

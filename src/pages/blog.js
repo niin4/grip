@@ -1,19 +1,23 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import styles from './blog.module.css'
-import ArticlePreviewSection from '../components/article-preview-section'
+import ArticlePreviewSection from 'components/ArticlePreviewSection'
+import Layout from 'components/Layout'
 
 class BlogIndex extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
 
     return (
-      <div style={{ background: '#fff' }}>
-        <Helmet title="Blog" />
-        <div className={styles.hero}>Blog</div>
-        <ArticlePreviewSection posts={posts} title="Recent blog posts" />
-      </div >
+      <Layout location={this.props.location}>
+        <div style={{ background: '#fff' }}>
+          <Helmet title="Blog" />
+          <div className={styles.hero}>Blog</div>
+          <ArticlePreviewSection posts={posts} title="Recent blog posts" />
+        </div >
+      </Layout>
     )
   }
 }
