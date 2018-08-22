@@ -4,19 +4,10 @@ set -e
 export GATSBY_DIR="/site"
 export PATH="$PATH:/usr/local/bin/gatsby"
 
-# Initialize Gatsby or run NPM install if needed
-if [ ! -f "$GATSBY_DIR/package.json" ]
+if [ ! -e "$GATSBY_DIR/node_modules/" ]
 then
-  echo "Initializing Gatsby..."
-  gatsby new $GATSBY_DIR
-
-else
-  if [ ! -e "$GATSBY_DIR/node_modules/" ]
-  then
-    echo "Node modules is empty. Running npm install..."
-    npm install --no-bin-links
-
-  fi
+  echo "Node modules is empty. Running npm install..."
+  npm install --no-bin-links
 
 fi
 

@@ -42,6 +42,7 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
+// Add aliases for resolve
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {

@@ -9,6 +9,8 @@ RUN npm install --global pngquant-bin gatsby; mkdir -p /site
 WORKDIR /site
 VOLUME /site
 
+RUN npm -v
+
 COPY . /
 RUN chmod +x /entry.sh
 ENTRYPOINT ["/entry.sh"]
