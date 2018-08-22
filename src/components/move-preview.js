@@ -8,7 +8,7 @@ export default ({ article }) => <div className={styles.preview}>
     {article.name}
   </h3>
   <small>{article.publishDate}</small>
-  <p
+  <div
     dangerouslySetInnerHTML={{
       __html: article.description.childMarkdownRemark.html
     }} />
