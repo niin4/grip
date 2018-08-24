@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import styles from './blog.module.css'
 import ArticlePreviewSection from 'components/ArticlePreviewSection'
 import Layout from 'components/Layout'
+import TestError from 'components/ErrorHandler/TestError'
 
 class BlogIndex extends React.Component {
   render() {
