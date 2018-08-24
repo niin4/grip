@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import Container from 'components/container'
+import ErrorHandler from 'components/ErrorHandler'
 import Navigation from 'components/navigation'
 import fonts from './font-face.css'
 
@@ -21,11 +21,10 @@ export default ({ children }) =>
       <Helmet defaultTitle={data.site.siteMetadata.title}
         titleTemplate={`%s | ${data.site.siteMetadata.title}`} />
       <Navigation />
-      <div>
+      <ErrorHandler>
         {children}
-      </div>
+      </ErrorHandler>
     </>
-    }
-  />
+    } />
 
 
